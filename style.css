@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  font-size: clamp(20px, 5vw, 32px); /* Tự điều chỉnh kích thước */
+  cursor: pointer;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: manipulation; /* Hỗ trợ cảm ứng */
+  transition: background-color 0.2s ease;
+  border-radius: 10px;
+}
+
+.cell.selected {
+  background-color: #fffb8f;
+  border-color: #fadb14;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #gameBoard {
+    grid-template-columns: repeat(6, 1fr); /* Nếu cần có thể thay đổi số cột cho mobile */
+  }
+}
